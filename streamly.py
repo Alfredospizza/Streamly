@@ -48,15 +48,21 @@ def find_ffmpeg_location() -> str | None:
     return None
 
 
+def _default_output() -> str:
+    return str(Path.home() / "Downloads" / "Streamly")
+
+
 def build_options(
     url: str,
     mode: str = "video",
     audio_format: str = "mp3",
     audio_quality: str = "0",
-    output: str = "downloads",
+    output: str = "",
     cookies_from_browser: str = "",
 ) -> tuple[str, dict]:
     """Build URL and yt-dlp options from input settings."""
+    if not output:
+        output = _default_output()
     output_template = str(Path(output).expanduser() / "%(title)s.%(ext)s")
 
     options: dict = {
@@ -111,12 +117,14 @@ def download_url(
     mode: str = "video",
     audio_format: str = "mp3",
     audio_quality: str = "0",
-    output: str = "downloads",
+    output: str = "",
     cookies_from_browser: str = "",
     log_callback: Callable[[str], None] | None = None,
     progress_callback: Callable[[float, str], None] | None = None,
 ) -> int:
     """Download a URL with yt-dlp API. Returns 0 on success, 1 on failure."""
+    if not output:
+        output = _default_output()
     Path(output).expanduser().mkdir(parents=True, exist_ok=True)
     target_url, options = build_options(
         url=url,
@@ -220,8 +228,8 @@ def make_parser() -> argparse.ArgumentParser:
     )
     dl.add_argument(
         "--output",
-        default="downloads",
-        help="Cartella di destinazione (default: downloads)",
+        default="",
+        help="Cartella di destinazione (default: ~/Downloads/Streamly)",
     )
     dl.add_argument(
         "--cookies-from-browser",

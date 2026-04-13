@@ -113,7 +113,7 @@ class StreamlyGUI:
         self.url_var = ctk.StringVar()
         self.mode_var = ctk.StringVar(value="video")
         self.audio_format_var = ctk.StringVar(value="mp3")
-        self.output_var = ctk.StringVar(value=str(Path("downloads").resolve()))
+        self.output_var = ctk.StringVar(value=str(Path.home() / "Downloads" / "Streamly"))
         self.status_var = ctk.StringVar()
         self.library_stats_var = ctk.StringVar(value="")
         self.is_downloading = False
