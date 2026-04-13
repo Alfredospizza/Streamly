@@ -73,6 +73,15 @@ def build_options(
     if mode == "video":
         options["format"] = "bestvideo*+bestaudio/best"
         options["merge_output_format"] = "mp4"
+        options["postprocessors"] = [
+            {
+                "key": "FFmpegVideoConvertor",
+                "preferedformat": "mp4",
+            }
+        ]
+        options["postprocessor_args"] = {
+            "FFmpegVideoConvertor": ["-c:v", "copy", "-c:a", "aac", "-b:a", "192k"],
+        }
     else:
         options["format"] = "bestaudio"
         options["postprocessors"] = [
