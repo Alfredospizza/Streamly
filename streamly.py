@@ -71,8 +71,11 @@ def build_options(
     }
 
     if mode == "video":
-        options["format"] = "bestvideo*+bestaudio/best"
-        options["merge_output_format"] = "mp4"
+        options["format"] = (
+            "bestvideo[vcodec^=avc1]+bestaudio/bestvideo*+bestaudio/best"
+        )
+        # Do NOT set merge_output_format here: yt-dlp will merge into .mkv
+        # so FFmpegVideoConvertor actually runs (it skips when already .mp4).
         options["postprocessors"] = [
             {
                 "key": "FFmpegVideoConvertor",
@@ -80,7 +83,7 @@ def build_options(
             }
         ]
         options["postprocessor_args"] = {
-            "FFmpegVideoConvertor": ["-c:v", "copy", "-c:a", "aac", "-b:a", "192k"],
+            "VideoConvertor": ["-c:v", "copy", "-c:a", "aac", "-b:a", "192k"],
         }
     else:
         options["format"] = "bestaudio"
