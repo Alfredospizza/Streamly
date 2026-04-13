@@ -18,6 +18,7 @@ pyinstaller \
   --hidden-import PIL.ImageTk \
   --hidden-import PIL._tkinter_finder \
   --hidden-import PIL._imagingtk \
+  --add-data "assets:assets" \
   streamly_gui.py
 
 mkdir -p dist/Streamly/tools/linux
@@ -31,6 +32,7 @@ else
 fi
 
 cp assets/streamly.svg dist/Streamly/assets/
+if [ -f assets/streamly.ico ]; then cp assets/streamly.ico dist/Streamly/assets/; fi
 cp README.md LICENSE scripts/install_linux.sh dist/Streamly/
 chmod +x dist/Streamly/install_linux.sh
 chmod +x dist/Streamly/Streamly

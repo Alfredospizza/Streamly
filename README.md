@@ -38,7 +38,7 @@ Go to the [**Releases**](https://github.com/Alfredospizza/Streamly/releases) pag
 |----------|------|------------|
 | **Linux** | `Streamly-linux-portable.tar.gz` | Extract → run `./install_linux.sh` or directly `./Streamly` |
 | **Windows** | `Streamly-windows-portable.zip` | Extract → double-click `Streamly.exe` |
-| **Windows** | `Streamly-Setup-Windows.exe` | Run the installer (coming soon) |
+| **Windows** | `Streamly-Setup-Windows.exe` | Run the installer |
 
 ## Build from Source
 

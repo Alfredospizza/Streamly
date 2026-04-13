@@ -32,3 +32,13 @@ Thumbs.db
 *.secret
 *.credentials
 secrets.*
+
+# Build artifacts
+build/
+dist/
+release/
+*.spec
+__pycache__/
+*.pyc
+.venv/
+downloads/

@@ -10,7 +10,7 @@ New-Item -ItemType Directory -Force -Path release | Out-Null
 
 python -m pip install -r requirements-build.txt
 
-pyinstaller --noconfirm --clean --name Streamly --windowed --onedir --hidden-import PIL.ImageTk --hidden-import PIL._tkinter_finder --hidden-import PIL._imagingtk streamly_gui.py
+pyinstaller --noconfirm --clean --name Streamly --windowed --onedir --icon assets/streamly.ico --hidden-import PIL.ImageTk --hidden-import PIL._tkinter_finder --hidden-import PIL._imagingtk --add-data "assets;assets" streamly_gui.py
 
 New-Item -ItemType Directory -Force -Path dist/Streamly/tools/windows | Out-Null
 
