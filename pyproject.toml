@@ -1,0 +1,18 @@
+[project]
+name = "streamly"
+version = "0.1.0"
+description = "Free YouTube downloader CLI based on yt-dlp"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "yt-dlp>=2026.3.31",
+  "customtkinter>=5.2.2",
+]
+
+[project.scripts]
+streamly = "streamly:main"
+streamly-gui = "streamly_gui:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"

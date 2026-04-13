@@ -1,0 +1,11 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="streamlyGradient" x1="58" y1="86" x2="440" y2="426" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DE74B8"/>
+      <stop offset="1" stop-color="#A9D3E7"/>
+    </linearGradient>
+  </defs>
+  <rect x="58" y="58" width="396" height="396" rx="98" fill="url(#streamlyGradient)"/>
+  <path d="M58 258H120C134 258 142 264 146 282L154 342C156 353 161 359 169 359C177 359 182 354 184 342L201 167C204 138 214 123 228 123C241 123 250 138 253 167L268 291C270 304 275 311 282 311C289 311 294 304 296 291L307 232C310 216 319 208 331 208C343 208 352 217 355 232L370 340C372 352 377 358 384 358C391 358 396 350 398 334L406 282C410 264 418 258 432 258H454" stroke="#101114" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="58.5" y="58.5" width="395" height="395" rx="97.5" stroke="white" stroke-opacity="0.16"/>
+</svg>

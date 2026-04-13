@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# Build / packaging
+build/
+dist/
+release/
+*.egg-info/
+*.spec
+
+# Local downloads
+downloads/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.swp
+*~
+
+# Secrets / credentials
+*.key
+*.pem
+*.p12
+*.secret
+*.credentials
+secrets.*
